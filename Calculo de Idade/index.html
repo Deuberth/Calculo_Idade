@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="CSS/Form.css">
+</head>
+<body>
+    <div id="calculo_idade">
+        <h1>Minha idade</h1>
+        <label for="">Escreva o ano de seu nascimento</label>
+        <input type="number" name="ano_nascimento" id="ano_nascimento">
+        <label for="">Escreva o ano atual</label>
+        <input type="number" name="ano_atual" id="ano_atual">
+        <button onclick="resultado()">Resultado</button>
+    </div>
+
+</body>
+<script>
+function resultado(){
+    var ano_nascimento=document.getElementById('ano_nascimento').value;
+    var ano_atual=document.getElementById('ano_atual').value;
+    var res= Number(ano_atual-ano_nascimento)
+    alert(`Atualmente você tem ${res} anos de idade`)
+}
+
+</script>
+</html>
