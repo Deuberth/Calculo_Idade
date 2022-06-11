@@ -11,9 +11,9 @@
     <div id="calculo_idade">
         <h1>Minha idade</h1>
         <label for="">Escreva o ano de seu nascimento</label>
-        <input type="number" name="ano_nascimento" id="ano_nascimento">
-        <label for="">Escreva o ano atual</label>
-        <input type="number" name="ano_atual" id="ano_atual">
+        <input type="number" name="ano_nascimento" id="ano_nascimento" placeholder="Digite o ano">
+        <label for="">Escreva o ano desejado</label>
+        <input type="number" name="ano_atual" id="ano_atual" placeholder="Digite o ano">
         <button onclick="resultado()">Resultado</button>
     </div>
 
@@ -22,8 +22,23 @@
 function resultado(){
     var ano_nascimento=document.getElementById('ano_nascimento').value;
     var ano_atual=document.getElementById('ano_atual').value;
-    var res= Number(ano_atual-ano_nascimento)
-    alert(`Atualmente você tem ${res} anos de idade`)
+    var res= Number(ano_atual-ano_nascimento)  
+
+    if(ano_nascimento==''||ano_nascimento.value.length<3){
+        alert('Digite ano');
+        ano_nascimento.style.background='red';
+            ano_nascimento.focus(); 
+            return false;}
+
+    else if(ano_atual==''){
+        alert('Digite o 2 ano pra subtração');
+        ano_atual.style.background='red';
+            ano_atual.focus(); 
+            return false;}
+
+    else{
+        alert(`Atualmente você tem ${res} de idade`)
+    }
 }
 
 </script>
